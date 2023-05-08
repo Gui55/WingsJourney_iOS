@@ -28,6 +28,7 @@ class GamesListView: UIView{
         tableView.dataSource = dataSource
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
+        tableView.register(GameTableCell.self, forCellReuseIdentifier: "GameCell")
         
         return tableView
     }()
