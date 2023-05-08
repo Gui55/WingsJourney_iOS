@@ -14,6 +14,7 @@ final class GamesListViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         buildView()
+        callService()
     }
     
     private func buildView(){
@@ -21,4 +22,25 @@ final class GamesListViewController: UIViewController{
         gamesListView = view as? GamesListView
     }
     
+    private func callService(){
+        if let url = URL(string: "https://6410ee0295656eab41c58fb8.mockapi.io/games"){
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                
+                if error == nil{
+                    if let gamesData = data{
+                        do{
+                            let jsonObject = try JSONSerialization.jsonObject(with: gamesData, options: [])
+                            print(jsonObject)
+                        } catch{
+                            print("erro")
+                        }
+                    }
+                } else {
+                    print(error?.localizedDescription as Any)
+                }
+                
+            }
+            task.resume()
+        }
+    }
 }
