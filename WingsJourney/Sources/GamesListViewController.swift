@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class GamesListViewController: UIViewController{
         
@@ -32,4 +33,23 @@ final class GamesListViewController: UIViewController{
     }
     
     
+}
+
+struct ViewControllerRepresentable: UIViewControllerRepresentable{
+    
+    typealias UIViewControllerType = GamesListViewController
+    
+    func makeUIViewController(context: Context) -> GamesListViewController {
+        GamesListViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: GamesListViewController, context: Context) {
+        
+    }
+}
+
+struct ViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewControllerRepresentable()
+    }
 }
