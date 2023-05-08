@@ -62,10 +62,12 @@ class GameTableCell: UITableViewCell{
             gameImage.heightAnchor.constraint(equalToConstant: 250),
             gameImage.widthAnchor.constraint(equalToConstant: 250),
             
-            gameName.topAnchor.constraint(equalTo: self.gameImage.bottomAnchor, constant: 20),
+            gameName.topAnchor.constraint(equalTo: self.gameImage.bottomAnchor),
             gameName.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             gameName.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            gameName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor)
+            gameName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            
+            gameName.heightAnchor.constraint(equalToConstant: 90)
         ])
     }
     
