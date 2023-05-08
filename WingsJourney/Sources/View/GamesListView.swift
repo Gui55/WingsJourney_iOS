@@ -22,7 +22,7 @@ class GamesListView: UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var gamesTableView: UITableView = {
+    lazy var gamesTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         
         tableView.dataSource = dataSource
