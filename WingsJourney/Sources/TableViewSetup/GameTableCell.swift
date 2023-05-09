@@ -28,7 +28,6 @@ class GameTableCell: UITableViewCell{
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.textColor = .black
         label.font = .systemFont(ofSize: 24, weight: .medium)
         label.text = "Super Mega Hiper Ultra Blaster of a Game"
         label.textAlignment = .center
