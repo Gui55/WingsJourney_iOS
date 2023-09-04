@@ -12,18 +12,16 @@ final class GamesListViewController: UIViewController{
         
     private var gamesListView: GamesListView? = nil
     private var gamesDataSource = GamesListDataSource()
-//    private var gamesAPI = GamesAPI()
     private let viewModel = GamesListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buildView()
         setupObservations()
-        viewModel.getGames()
     }
     
     private func setupObservations(){
-        viewModel.gamesList = { [weak self] value in
+        viewModel.performFetchGames{ [weak self] value in
             self?.gamesDataSource.populateDataSource(data: value)
             DispatchQueue.main.async{
                 self?.gamesListView?.gamesTableView.reloadData()

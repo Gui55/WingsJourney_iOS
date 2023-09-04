@@ -8,13 +8,11 @@
 import Foundation
 
 class GamesListViewModel{
-    private var gamesAPI = GamesAPI()
-    
-    var gamesList: (([Game]) -> Void)?
-    
-    func getGames(){
-        gamesAPI.callService(){ [weak self] result in
-            self?.gamesList?(result)
+    private var gamesListProtocol: GamesListProtocol = GamesListModel()
+            
+    func performFetchGames(gamesListClosure: @escaping (([Game]) -> Void)){
+        gamesListProtocol.getGames{result in
+            gamesListClosure(result)
         }
     }
 }
