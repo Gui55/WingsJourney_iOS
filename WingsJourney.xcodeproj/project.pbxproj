@@ -13,6 +13,10 @@
 		754D8C422A09642600527A19 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D8C412A09642600527A19 /* Game.swift */; };
 		754D8C442A096E9800527A19 /* GamesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D8C432A096E9800527A19 /* GamesAPI.swift */; };
 		754D8C492A09A54200527A19 /* GameTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754D8C482A09A54200527A19 /* GameTableCell.swift */; };
+		7596F96D2AA6873700874721 /* GamesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596F96C2AA6873700874721 /* GamesListViewModel.swift */; };
+		7596F9792AA69A3700874721 /* GamesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596F9782AA69A3700874721 /* GamesListModel.swift */; };
+		7596F97B2AA69A4300874721 /* GamesListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596F97A2AA69A4300874721 /* GamesListProtocol.swift */; };
+		7596F97D2AA69A5000874721 /* GamesListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596F97C2AA69A5000874721 /* GamesListRepository.swift */; };
 		75B3859A2A0430DE000A5CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B385992A0430DE000A5CF0 /* AppDelegate.swift */; };
 		75B3859C2A0430DE000A5CF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B3859B2A0430DE000A5CF0 /* SceneDelegate.swift */; };
 		75B385A32A0430DF000A5CF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75B385A22A0430DF000A5CF0 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 		754D8C412A09642600527A19 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		754D8C432A096E9800527A19 /* GamesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesAPI.swift; sourceTree = "<group>"; };
 		754D8C482A09A54200527A19 /* GameTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableCell.swift; sourceTree = "<group>"; };
+		7596F96C2AA6873700874721 /* GamesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewModel.swift; sourceTree = "<group>"; };
+		7596F9782AA69A3700874721 /* GamesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListModel.swift; sourceTree = "<group>"; };
+		7596F97A2AA69A4300874721 /* GamesListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListProtocol.swift; sourceTree = "<group>"; };
+		7596F97C2AA69A5000874721 /* GamesListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListRepository.swift; sourceTree = "<group>"; };
 		75B385962A0430DE000A5CF0 /* WingsJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WingsJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B385992A0430DE000A5CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75B3859B2A0430DE000A5CF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,10 +56,8 @@
 		751B02792A04688500E3C89F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7596F96E2AA68C0D00874721 /* GamesList */,
 				754D8C402A09640000527A19 /* APISetup */,
-				751B027F2A046C5700E3C89F /* TableViewSetup */,
-				751B027C2A046ACB00E3C89F /* View */,
-				751B027A2A04689900E3C89F /* GamesListViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -59,6 +65,7 @@
 		751B027C2A046ACB00E3C89F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				751B027A2A04689900E3C89F /* GamesListViewController.swift */,
 				751B027D2A046AF200E3C89F /* GamesListView.swift */,
 			);
 			path = View;
@@ -80,6 +87,43 @@
 				754D8C432A096E9800527A19 /* GamesAPI.swift */,
 			);
 			path = APISetup;
+			sourceTree = "<group>";
+		};
+		7596F96B2AA6871B00874721 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7596F96C2AA6873700874721 /* GamesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7596F96E2AA68C0D00874721 /* GamesList */ = {
+			isa = PBXGroup;
+			children = (
+				7596F9772AA69A2800874721 /* Data */,
+				7596F96F2AA68C1900874721 /* Presentation */,
+			);
+			path = GamesList;
+			sourceTree = "<group>";
+		};
+		7596F96F2AA68C1900874721 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				751B027F2A046C5700E3C89F /* TableViewSetup */,
+				7596F96B2AA6871B00874721 /* ViewModel */,
+				751B027C2A046ACB00E3C89F /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7596F9772AA69A2800874721 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7596F9782AA69A3700874721 /* GamesListModel.swift */,
+				7596F97A2AA69A4300874721 /* GamesListProtocol.swift */,
+				7596F97C2AA69A5000874721 /* GamesListRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		75B3858D2A0430DE000A5CF0 = {
@@ -198,12 +242,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				754D8C492A09A54200527A19 /* GameTableCell.swift in Sources */,
+				7596F97D2AA69A5000874721 /* GamesListRepository.swift in Sources */,
 				751B02812A046C7400E3C89F /* GamesListDataSource.swift in Sources */,
 				754D8C442A096E9800527A19 /* GamesAPI.swift in Sources */,
+				7596F9792AA69A3700874721 /* GamesListModel.swift in Sources */,
 				754D8C422A09642600527A19 /* Game.swift in Sources */,
 				75B3859A2A0430DE000A5CF0 /* AppDelegate.swift in Sources */,
 				75B3859C2A0430DE000A5CF0 /* SceneDelegate.swift in Sources */,
 				751B027E2A046AF200E3C89F /* GamesListView.swift in Sources */,
+				7596F97B2AA69A4300874721 /* GamesListProtocol.swift in Sources */,
+				7596F96D2AA6873700874721 /* GamesListViewModel.swift in Sources */,
 				751B027B2A04689900E3C89F /* GamesListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
