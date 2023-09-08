@@ -10,7 +10,7 @@ import Foundation
 class GamesAPI {
     
     func callService(completion: @escaping ([Game]) -> Void){
-        if let url = URL(string: "https://6410ee0295656eab41c58fb8.mockapi.io/games"){
+        if let url = URL(string: "http://localhost:8081/games"){
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 
                 if let gamesData = data {

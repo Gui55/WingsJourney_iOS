@@ -9,8 +9,13 @@ import Foundation
 
 struct Game: Codable{
     
-    let id: String
+    let id: Int
     let name: String
+    let company: String
     let image: String
+    let genre: String
+    let description: String
+    let likes: Int
+    let dislikes: Int
     
 }
