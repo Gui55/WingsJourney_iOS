@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750E71282AA9251B00127A52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E71272AA9251B00127A52 /* LoginViewController.swift */; };
+		750E712A2AA9255E00127A52 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E71292AA9255E00127A52 /* LoginView.swift */; };
+		750E712C2AA9391800127A52 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E712B2AA9391800127A52 /* LoginModel.swift */; };
+		750E712E2AA9392800127A52 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E712D2AA9392800127A52 /* LoginProtocol.swift */; };
+		750E71302AA9393300127A52 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E712F2AA9393300127A52 /* LoginRepository.swift */; };
+		750E71322AA9394B00127A52 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E71312AA9394B00127A52 /* LoginViewModel.swift */; };
+		750E71352AA939AF00127A52 /* MockLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750E71342AA939AF00127A52 /* MockLogin.swift */; };
 		751B027B2A04689900E3C89F /* GamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B027A2A04689900E3C89F /* GamesListViewController.swift */; };
 		751B027E2A046AF200E3C89F /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B027D2A046AF200E3C89F /* GamesListView.swift */; };
 		751B02812A046C7400E3C89F /* GamesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B02802A046C7400E3C89F /* GamesListDataSource.swift */; };
@@ -24,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		750E71272AA9251B00127A52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		750E71292AA9255E00127A52 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		750E712B2AA9391800127A52 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		750E712D2AA9392800127A52 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
+		750E712F2AA9393300127A52 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		750E71312AA9394B00127A52 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		750E71342AA939AF00127A52 /* MockLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLogin.swift; sourceTree = "<group>"; };
 		751B027A2A04689900E3C89F /* GamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewController.swift; sourceTree = "<group>"; };
 		751B027D2A046AF200E3C89F /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
 		751B02802A046C7400E3C89F /* GamesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListDataSource.swift; sourceTree = "<group>"; };
@@ -53,9 +67,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		750E71222AA9249A00127A52 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				750E71242AA924AA00127A52 /* Presentation */,
+				750E71232AA924A400127A52 /* Data */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		750E71232AA924A400127A52 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				750E712B2AA9391800127A52 /* LoginModel.swift */,
+				750E712D2AA9392800127A52 /* LoginProtocol.swift */,
+				750E712F2AA9393300127A52 /* LoginRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		750E71242AA924AA00127A52 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				750E71262AA924C900127A52 /* ViewModel */,
+				750E71252AA924BF00127A52 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		750E71252AA924BF00127A52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750E71272AA9251B00127A52 /* LoginViewController.swift */,
+				750E71292AA9255E00127A52 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750E71262AA924C900127A52 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				750E71312AA9394B00127A52 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		750E71332AA9399F00127A52 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				750E71342AA939AF00127A52 /* MockLogin.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		751B02792A04688500E3C89F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				750E71332AA9399F00127A52 /* Mocks */,
+				750E71222AA9249A00127A52 /* Login */,
 				7596F96E2AA68C0D00874721 /* GamesList */,
 				754D8C402A09640000527A19 /* APISetup */,
 			);
@@ -248,10 +317,17 @@
 				7596F9792AA69A3700874721 /* GamesListModel.swift in Sources */,
 				754D8C422A09642600527A19 /* Game.swift in Sources */,
 				75B3859A2A0430DE000A5CF0 /* AppDelegate.swift in Sources */,
+				750E71302AA9393300127A52 /* LoginRepository.swift in Sources */,
+				750E71322AA9394B00127A52 /* LoginViewModel.swift in Sources */,
+				750E71352AA939AF00127A52 /* MockLogin.swift in Sources */,
 				75B3859C2A0430DE000A5CF0 /* SceneDelegate.swift in Sources */,
+				750E712A2AA9255E00127A52 /* LoginView.swift in Sources */,
+				750E712E2AA9392800127A52 /* LoginProtocol.swift in Sources */,
 				751B027E2A046AF200E3C89F /* GamesListView.swift in Sources */,
+				750E712C2AA9391800127A52 /* LoginModel.swift in Sources */,
 				7596F97B2AA69A4300874721 /* GamesListProtocol.swift in Sources */,
 				7596F96D2AA6873700874721 /* GamesListViewModel.swift in Sources */,
+				750E71282AA9251B00127A52 /* LoginViewController.swift in Sources */,
 				751B027B2A04689900E3C89F /* GamesListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
