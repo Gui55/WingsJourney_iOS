@@ -11,6 +11,10 @@ class GlobalValues{
     private static let users = UserDefaults.standard
     
     static func registerToken(token: String){
-        users.set("Bearer "+token, forKey: "token")
+        users.set("Bearer \(token)", forKey: "token")
+    }
+    
+    static func getToken() -> String{
+        return users.string(forKey: "token") ?? ""
     }
 }
