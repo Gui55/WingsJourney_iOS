@@ -10,7 +10,7 @@ import Foundation
 class LoginModel: LoginProtocol{
     private let loginRepository = LoginRepository()
     
-    func login(user: String, password: String, completion: @escaping ((Bool) -> Void)) {
+    func login(user: String, password: String, completion: @escaping ((String) -> Void)) {
         loginRepository.getLoginResult(user: user, password: password){ result in
             completion(result)
         }

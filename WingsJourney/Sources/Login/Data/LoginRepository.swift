@@ -8,9 +8,11 @@
 import Foundation
 
 class LoginRepository{
-    private let source = MockLogin()
+    private let source = LoginAPI()
     
-    func getLoginResult(user: String, password: String, completion: @escaping ((Bool)->Void)){
-        completion(source.doLogin(user: user, password: password))
+    func getLoginResult(user: String, password: String, completion: @escaping ((String)->Void)){
+        source.callService(user: user, password: password){ result in
+            completion(result.token)
+        }
     }
 }
