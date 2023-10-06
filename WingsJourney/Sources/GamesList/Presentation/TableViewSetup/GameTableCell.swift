@@ -74,28 +74,23 @@ class GameTableCell: UITableViewCell{
         self.gameName.text = name
     }
     
-    func configureImage(url:String){
-        self.gameImage.load(urlString: url)
+    func configureImage(request: URLRequest){
+        self.gameImage.load(request: request)
     }
     
 }
 
 extension UIImageView {
-    func load(urlString: String) {
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        DispatchQueue.global().async {
-            [weak self] in
-            
-            if let data = try? Data(contentsOf: url) {
-                if let image  = UIImage(data: data){
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
+    func load(request: URLRequest) {
+        let task = URLSession.shared.dataTask(with: request){ data, response, error in
+            if let imgData = data{
+                DispatchQueue.main.async{
+                    self.image = UIImage(data: imgData)
                 }
+            } else if let error = error{
+                print(String(describing: error))
             }
         }
+        task.resume()
     }
 }
