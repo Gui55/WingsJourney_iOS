@@ -26,7 +26,12 @@ class GamesListDataSource: NSObject, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as! GameTableCell
         cell.configureName(name: data[indexPath.section].name)
-        cell.configureImage(url: data[indexPath.section].image)
+        
+        if let url = URL(string: data[indexPath.section].image) {
+            var request = URLRequest(url: url)
+            request.setValue(GlobalValues.getToken(), forHTTPHeaderField: "Authorization")
+            cell.configureImage(request: request)
+        }
         return cell
     }
 }
