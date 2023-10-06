@@ -33,13 +33,20 @@ final class LoginViewController: UIViewController{
         let password = loginView?.passwordTextField.text ?? ""
         
         viewModel.performLogin(user: user, password: password){ [weak self] value in
-            if value{
-                let gamesListViewController = GamesListViewController()
-                self?.navigationController?.pushViewController(gamesListViewController, animated: true)
-            } else {
-                self?.loginView?.alertText.text = "Credenciais Erradas"
+            DispatchQueue.main.async{
+                GlobalValues.registerToken(token: value)
+                if !value.isEmpty{
+                    self?.changeToGameList()
+                } else {
+                    self?.loginView?.alertText.text = "Credenciais Erradas"
+                }
             }
         }
+    }
+    
+    private func changeToGameList(){
+        let gamesListViewController = GamesListViewController()
+        self.navigationController?.pushViewController(gamesListViewController, animated: true)
     }
     
 }

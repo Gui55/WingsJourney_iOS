@@ -10,7 +10,7 @@ import Foundation
 class LoginViewModel{
     private let loginModel: LoginProtocol = LoginModel()
     
-    func performLogin(user: String, password: String, completion: @escaping ((Bool)->Void)){
+    func performLogin(user: String, password: String, completion: @escaping ((String)->Void)){
         loginModel.login(user: user, password: password){ result in
             completion(result)
         }

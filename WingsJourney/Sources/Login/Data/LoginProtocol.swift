@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LoginProtocol{
-    func login(user: String, password: String, completion: @escaping ((Bool)->Void))
+    func login(user: String, password: String, completion: @escaping ((String)->Void))
 }
